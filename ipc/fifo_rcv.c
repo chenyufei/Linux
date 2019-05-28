@@ -38,14 +38,14 @@ int main()
 		exit(EXIT_FAILURE);
 
 	}
-
+#if 0
 	//4. read the fifo file
 	int num = 0;
 	printf("in %s %d\n",__func__,__LINE__);
 	num = read(fifo_fd, buf, sizeof(buf));
 
 	printf("Read %d words: %s\n", num, buf);
-
+#endif
 	close(fifo_fd);
 
 	return 0;

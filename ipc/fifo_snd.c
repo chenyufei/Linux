@@ -34,6 +34,10 @@ int main()
 	//3.Open the fifo file
 	int fifo_fd;
 	fifo_fd = open(FIFO, O_WRONLY);
+	/*
+	没有使用O_NONBLOCK 标记时，打开FIFO 来读取的操作会等到其他进程打开FIFO文件来写入才正常返回。
+	同样地，打开FIFO文件来写入的操作会等到其他进程打开FIFO 文件来读取后才正常返回。
+	*/
 	if(-1 == fifo_fd)
 	{
 		perror("open");
